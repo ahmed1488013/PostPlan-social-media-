@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostPlan - Social Media Scheduler</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F7F7F7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .scheduler {
+            width: 100%;
+            max-width: 900px;
+            background-color: #FFFFFF;
+            border: 1px solid #DDDDDD;
+            border-radius: 10px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .scheduler h1 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: #2A2D34;
+            text-align: center;
+        }
+
+        .post-form {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #DDDDDD;
+            border-radius: 8px;
+            background-color: #FAFAFA;
+        }
+
+        .post-form input, .post-form textarea, .post-form select {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 12px;
+            border: 1px solid #DDDDDD;
+            border-radius: 6px;
+            font-size: 16px;
+            background-color: #FFFFFF;
+            transition: border-color 0.3s;
+        }
+
+        .post-form input:focus, .post-form textarea:focus, .post-form select:focus {
+            border-color: #FFA500;
+            outline: none;
+        }
+
+        .post-form button {
+            background-color: #FFA500;
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .post-form button:hover {
+            background-color: #E59400;
+        }
+
+        .schedule-view {
+            margin-top: 20px;
+        }
+
+        .schedule-view h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #2A2D34;
+        }
+
+        .scheduled-post {
+            background-color: #FFFFFF;
+            border: 1px solid #DDDDDD;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .scheduled-post h3 {
+            font-size: 18px;
+            color: #2A2D34;
+            margin-bottom: 5px;
+        }
+
+        .scheduled-post p {
+            margin: 5px 0;
+            color: #555555;
+        }
+
+        .scheduled-post .post-date {
+            font-weight: bold;
+            color: #2A2D34;
+        }
+
+        .post-preview {
+            background-color: #2A2D34;
+            color: #FFFFFF;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 25px;
+            text-align: left;
+        }
+
+        .post-preview h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .post-preview p {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .scheduler {
+                padding: 15px;
+            }
+
+            .post-form input, .post-form textarea, .post-form select {
+                font-size: 14px;
+            }
+
+            .post-form button {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+
+            .scheduled-post h3 {
+                font-size: 16px;
+            }
+
+            .post-preview h2 {
+                font-size: 18px;
+            }
+
+            .post-preview p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scheduler">
+        <h1>PostPlan - Social Media Scheduler</h1>
+
+        <form class="post-form">
+            <input type="text" placeholder="Post Title" required>
+            <textarea placeholder="Write your caption..." rows="4" required></textarea>
+            <select required>
+                <option value="" disabled selected>Select Platform</option>
+                <option value="facebook">Facebook</option>
+                <option value="instagram">Instagram</option>
+                <option value="twitter">Twitter</option>
+            </select>
+            <input type="date" required>
+            <button type="submit">Schedule Post</button>
+        </form>
+
+        <div class="schedule-view">
+            <h2>Scheduled Posts</h2>
+            <div class="scheduled-post">
+                <h3>Post Title Example</h3>
+                <p class="post-date">Scheduled Date: 2024-12-01</p>
+                <p>Platform: Facebook</p>
+                <p>Caption: "An example caption for your scheduled post."</p>
+            </div>
+        </div>
+
+        <div class="post-preview">
+            <h2>Preview</h2>
+            <p><strong>Title:</strong> Post Title Example</p>
+            <p><strong>Caption:</strong> An example caption for your scheduled post.</p>
+        </div>
+    </div>
+</body>
+</html>
